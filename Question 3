@@ -1,0 +1,22 @@
+/*
+// Tree Node
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+*/
+
+int height(struct Node* node) {
+    // code here
+    if (node == nullptr) {
+        return -1;  // empty tree/subtree has height -1 by edges definition
+    }
+
+    int leftHeight = height(node->left);
+    int rightHeight = height(node->right);
+
+    return 1 + max(leftHeight, rightHeight);
+}
+
